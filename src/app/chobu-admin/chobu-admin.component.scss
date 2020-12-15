@@ -1,0 +1,35 @@
+.buttonSection img {
+  height: 20px;
+  width: 20px;
+}
+
+.card-image img {
+  width: 5rem;
+  height: 5rem;
+}
+
+.buttonSection {
+  display: flex;
+}
+
+.buttonSection div {
+  flex: 1;
+}
+
+.codePrice {
+  display: flex;
+}
+
+.codePrice div {
+  flex: 1;
+}
+
+.card-item {
+  border: 1px solid grey;
+  float: left;
+  width: 49%;
+}
+
+.container {
+  // display: flex;
+}

@@ -1,9 +1,41 @@
-<mat-toolbar color="primary" role="heading" class="nav">
-  <span class="nav-title">
-    <img src="/assets/images/logo.jpg" alt="">
-    <a routerLink="/" class="ff-link">Artiste Doodles</a>
-  </span>
-  <span class="example-spacer"></span>
-  <button matTooltip="Save Draft" routerLink="/contents">See all Content</button>
-</mat-toolbar>
-<router-outlet></router-outlet>
+<mat-drawer-container class="main-container" autosize hasBackdrop="true">
+  <mat-toolbar color="primary" role="heading" class="nav nav-title">
+    <!-- <span class="nav-title"> -->
+    <span (click)="drawer.toggle()">
+      <svg viewBox="0 0 80 60" width="20" height="30" class="icon-svg">
+        <rect width="80" height="8"></rect>
+        <rect y="30" width="80" height="8"></rect>
+        <rect y="60" width="80" height="8"></rect>
+      </svg>
+    </span>
+    <!-- <img src="/assets/images/logo.jpg" alt=""> -->
+    <a routerLink="/" class="header-title">Artiste Doodles</a>
+    <!-- </span> -->
+    <!-- <span class="example-spacer"></span> -->
+    <!-- <button matTooltip="Save Draft" routerLink="/contents">See all Content</button> -->
+  </mat-toolbar>
+
+  <mat-drawer #drawer mode="over" class="sidenav">
+    <div class="side-nav-icon">
+      <img src="/assets/images/logo.jpg" alt="">
+    </div>
+    <div class="side-nav-item" [class.activeLink]="activeLink===''" routerLink="/" (click)="drawer.toggle()">
+      <a (click)="activeLink = ''">Home</a>
+    </div>
+    <div class="side-nav-item" [class.activeLink]="activeLink==='what'" routerLink="/" (click)="drawer.toggle()">
+      <a (click)="activeLink = 'what'">About us</a>
+    </div>
+    <div class="side-nav-item" [class.activeLink]="activeLink==='about'" routerLink="/" (click)="drawer.toggle()">
+      <a (click)="activeLink = 'about'">Category 0</a>
+    </div>
+    <div class="side-nav-item" [class.activeLink]="activeLink==='resources'" routerLink="/" (click)="drawer.toggle()">
+      <a (click)="activeLink = 'resources'">category 1</a>
+    </div>
+    <div class="side-nav-item" [class.activeLink]="activeLink==='contact'" routerLink="/contact"
+      (click)="drawer.toggle()">
+      <a (click)="activeLink = 'contact'">Contact Us</a>
+    </div>
+  </mat-drawer>
+
+  <router-outlet></router-outlet>
+</mat-drawer-container>
