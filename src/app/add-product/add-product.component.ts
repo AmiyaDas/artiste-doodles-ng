@@ -1,4 +1,13 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFireDatabase, AngularFireList } from '@angular/fire/database';
+import { Observable } from 'rxjs';
+import { FileUpload } from '../shared/fileupload';
+import { UploadFileService } from '../shared/upload-file.service';
+
+export interface FilesUploadMetadata {
+  uploadProgress: Observable<number>;
+  downloadUrl: any;
+}
 
 @Component({
   selector: 'app-add-product',
@@ -7,14 +16,34 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddProductComponent implements OnInit {
   imageUrl: string = '/assets/images/upload.png';
-  constructor() {}
+  currentFileUpload: FileUpload;
+  percentage: number;
+  isUploadComplete: boolean = false;
+
+  constructor(private uploadService: UploadFileService) {}
 
   ngOnInit(): void {}
 
-  onImageSelected(event): void {
-    console.log(event);
-    this.imageUrl = event.srcElement.files[0].name
-      ? event.srcElement.files[0].name
-      : this.imageUrl;
+  onImageSelect(files): void {
+    if (!this.isUploadComplete) {
+      const file = files[0];
+      this.currentFileUpload = new FileUpload(file);
+      this.uploadService.pushFileToStorage(this.currentFileUpload).subscribe(
+        (percentage) => {
+          this.percentage = Math.round(percentage);
+          if (this.percentage === 100) {
+            this.isUploadComplete = true;
+            this.uploadService.imageUrl.subscribe({
+              next: (value) => {
+                this.imageUrl = value;
+              },
+            });
+          }
+        },
+        (error) => {
+          console.log(error);
+        }
+      );
+    }
   }
 }

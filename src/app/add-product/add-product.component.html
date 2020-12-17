@@ -1,7 +1,8 @@
 <div class="marginTopDiv">
     <div class="imageSection">
         <label for="file-input"><img [src]="imageUrl" alt="imageUrl"></label>
-        <input id="file-input" type="file" (change)="onImageSelected($event)" />
+        <input id="file-input" type="file" (change)="onImageSelect($event.target.files)"
+            [disabled]="isUploadComplete" />
     </div>
     <div class="contentSection">
         <input type="text" placeholder="Title">
