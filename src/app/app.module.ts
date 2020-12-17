@@ -11,6 +11,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCarouselModule } from '@ngbmodule/material-carousel';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 import firebase from 'firebase/app';
 import { HomeComponent } from './home/home.component';
 import { ChobuAdminComponent } from './chobu-admin/chobu-admin.component';
@@ -41,6 +42,7 @@ import { FormsModule } from '@angular/forms';
     FormsModule,
     MatInputModule,
     MatSidenavModule,
+    MatSnackBarModule,
     MatToolbarModule,
     MatCarouselModule.forRoot(),
   ],

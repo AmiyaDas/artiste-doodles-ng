@@ -4,7 +4,28 @@
         <button routerLink="/add">+</button>
     </div>
     <div class="container">
-        <div class="card-item">
+        <div class="card-item" *ngFor="let item of items">
+            <div class="card-image">
+                <img [src]="item.imageUrl" alt="">
+            </div>
+            <div class="textSection">
+                {{item.title}}
+            </div>
+            <div class="codePrice">
+                <div class="price">&#x20B9; {{item.price}}</div>
+                <div class="code">[ {{item.code}} ]</div>
+            </div>
+            <div class="buttonSection">
+                <div class="editButton" (click)="openToast('Edit feature is not availale, wait for next version!')">
+                    <img src="/assets/images/edit2.png" alt="">
+                </div>
+                <div class="deleteButton" (click)="onDelete(item.key,item.imageUrl)">
+                    <img src="/assets/images/delete2.png" alt="">
+                </div>
+            </div>
+        </div>
+
+        <!-- <div class="card-item">
             <div class="card-image">
                 <img src="/assets/images/myntra1.webp" alt="">
             </div>
@@ -12,15 +33,15 @@
                 title of item
             </div>
             <div class="codePrice">
-                <div class="code">1234</div>
                 <div class="price">500</div>
+                <div class="code">1234</div>
             </div>
             <div class="buttonSection">
-                <div class="editButton">
-                    <img src="/assets/images/edit.png" alt="">
+                <div class="editButton" (click)="openToast('Edit feature is not availale, wait for next version!')">
+                    <img src="/assets/images/edit2.png" alt="">
                 </div>
                 <div class="deleteButton">
-                    <img src="/assets/images/delete.png" alt="">
+                    <img src="/assets/images/delete2.png" alt="">
                 </div>
             </div>
         </div>
@@ -33,19 +54,18 @@
                 title of item
             </div>
             <div class="codePrice">
-                <div class="code">1234</div>
                 <div class="price">500</div>
+                <div class="code">1234</div>
             </div>
             <div class="buttonSection">
-                <div class="editButton">
-                    <img src="/assets/images/edit.png" alt="">
+                <div class="editButton" (click)="openToast('Edit feature is not availale, wait for next version!')">
+                    <img src="/assets/images/edit2.png" alt="">
                 </div>
                 <div class="deleteButton">
-                    <img src="/assets/images/delete.png" alt="">
+                    <img src="/assets/images/delete2.png" alt="">
                 </div>
             </div>
         </div>
-
         <div class="card-item">
             <div class="card-image">
                 <img src="/assets/images/myntra1.webp" alt="">
@@ -54,17 +74,21 @@
                 title of item
             </div>
             <div class="codePrice">
-                <div class="code">1234</div>
                 <div class="price">500</div>
+                <div class="code">1234</div>
             </div>
             <div class="buttonSection">
-                <div class="editButton">
-                    <img src="/assets/images/edit.png" alt="">
+                <div class="editButton" (click)="openToast('Edit feature is not availale, wait for next version!')">
+                    <img src="/assets/images/edit2.png" alt="">
                 </div>
                 <div class="deleteButton">
-                    <img src="/assets/images/delete.png" alt="">
+                    <img src="/assets/images/delete2.png" alt="">
                 </div>
             </div>
+        </div> -->
+
+        <div class="toast" [class.hide]="hideToast">
+            <div>{{toastMessage}}</div>
         </div>
     </div>
 </div>
