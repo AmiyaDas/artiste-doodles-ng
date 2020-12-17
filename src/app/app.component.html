@@ -22,14 +22,20 @@
     <div class="side-nav-item" [class.activeLink]="activeLink===''" routerLink="/" (click)="drawer.toggle()">
       <a (click)="activeLink = ''">Home</a>
     </div>
-    <div class="side-nav-item" [class.activeLink]="activeLink==='what'" routerLink="/" (click)="drawer.toggle()">
-      <a (click)="activeLink = 'what'">About us</a>
+    <div class="side-nav-item" [class.activeLink]="activeLink==='products/er'" routerLink="/products/er"
+      (click)="drawer.toggle()">
+      <a (click)="activeLink = 'products/er'">Earrings</a>
     </div>
-    <div class="side-nav-item" [class.activeLink]="activeLink==='about'" routerLink="/" (click)="drawer.toggle()">
-      <a (click)="activeLink = 'about'">Category 0</a>
+    <div class="side-nav-item" [class.activeLink]="activeLink==='products/nl'" routerLink="/products/nl"
+      (click)="drawer.toggle()">
+      <a (click)="activeLink = 'products/nl'">Necklaces</a>
     </div>
-    <div class="side-nav-item" [class.activeLink]="activeLink==='resources'" routerLink="/" (click)="drawer.toggle()">
-      <a (click)="activeLink = 'resources'">category 1</a>
+    <div class="side-nav-item" [class.activeLink]="activeLink==='products/js'" routerLink="/products/js"
+      (click)="drawer.toggle()">
+      <a (click)="activeLink = 'products/js'">Jewellery Set</a>
+    </div>
+    <div class="side-nav-item" [class.activeLink]="activeLink==='about'" routerLink="/about" (click)="drawer.toggle()">
+      <a (click)="activeLink = 'about'">About Us</a>
     </div>
     <div class="side-nav-item" [class.activeLink]="activeLink==='contact'" routerLink="/contact"
       (click)="drawer.toggle()">

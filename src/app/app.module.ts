@@ -15,6 +15,10 @@ import firebase from 'firebase/app';
 import { HomeComponent } from './home/home.component';
 import { ChobuAdminComponent } from './chobu-admin/chobu-admin.component';
 import { ContactComponent } from './contact/contact.component';
+import { ViewProductComponent } from './view-product/view-product.component';
+import { AddProductComponent } from './add-product/add-product.component';
+import { AboutUsComponent } from './about-us/about-us.component';
+import { ProductsListComponent } from './products-list/products-list.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +26,10 @@ import { ContactComponent } from './contact/contact.component';
     HomeComponent,
     ChobuAdminComponent,
     ContactComponent,
+    ViewProductComponent,
+    AddProductComponent,
+    AboutUsComponent,
+    ProductsListComponent,
   ],
   imports: [
     BrowserModule,
