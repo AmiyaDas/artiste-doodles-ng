@@ -19,6 +19,7 @@ import { ViewProductComponent } from './view-product/view-product.component';
 import { AddProductComponent } from './add-product/add-product.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { ProductsListComponent } from './products-list/products-list.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { ProductsListComponent } from './products-list/products-list.component';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     BrowserAnimationsModule,
+    FormsModule,
     MatInputModule,
     MatSidenavModule,
     MatToolbarModule,

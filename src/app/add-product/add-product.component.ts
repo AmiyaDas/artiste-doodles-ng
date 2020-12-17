@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFireDatabase, AngularFireList } from '@angular/fire/database';
+import { AngularFireDatabase } from '@angular/fire/database';
 import { Observable } from 'rxjs';
 import { FileUpload } from '../shared/fileupload';
 import { UploadFileService } from '../shared/upload-file.service';
@@ -19,8 +19,20 @@ export class AddProductComponent implements OnInit {
   currentFileUpload: FileUpload;
   percentage: number;
   isUploadComplete: boolean = false;
+  tags: string = '';
+  title: string = '';
+  itemData: any = {
+    title: '',
+    price: '',
+    code: '',
+    category: '',
+    tags: [],
+  };
 
-  constructor(private uploadService: UploadFileService) {}
+  constructor(
+    private uploadService: UploadFileService,
+    public db: AngularFireDatabase
+  ) {}
 
   ngOnInit(): void {}
 
@@ -45,5 +57,12 @@ export class AddProductComponent implements OnInit {
         }
       );
     }
+  }
+
+  onSave() {
+    const tagsArray = this.tags.length ? this.tags.split(',') : [];
+    this.itemData.tags = tagsArray;
+    console.log(this.itemData);
+    // let postRef: any = this.db.list('items').push(this.itemData);
   }
 }

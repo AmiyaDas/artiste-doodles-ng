@@ -5,15 +5,15 @@
             [disabled]="isUploadComplete" />
     </div>
     <div class="contentSection">
-        <input type="text" placeholder="Title">
-        <input type="text" placeholder="Price">
-        <input type="text" placeholder="Code">
-        <select name="category" id="category">
+        <input type="text" placeholder="Title" [(ngModel)]="this.title">
+        <input type="text" placeholder="Price" [(ngModel)]="itemData.price">
+        <input type="text" placeholder="Code" [(ngModel)]="itemData.code">
+        <select name="category" id="category" [(ngModel)]="itemData.category">
             <option value="nl">Necklace</option>
             <option value="er">Earring</option>
             <option value="js">Jewellery Set</option>
         </select>
-        <textarea cols="30" rows="10" placeholder="Enter tags separated by coma(,)"></textarea>
+        <textarea cols="30" rows="10" placeholder="Enter tags separated by coma(,)" [(ngModel)]="tags"></textarea>
     </div>
-    <button class="saveButton">Save</button>
+    <button class="saveButton" (click)="onSave()">Save</button>
 </div>
