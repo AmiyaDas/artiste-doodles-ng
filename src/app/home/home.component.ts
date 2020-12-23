@@ -13,9 +13,10 @@ export class HomeComponent implements OnInit {
   constructor() {}
 
   slides = [
-    { image: '/assets/images/img1.jpg', color: 'red' },
-    { image: '/assets/images/img2.jpg', color: 'blue' },
-    { image: '/assets/images/img3.jpg', color: 'green' },
+    { image: '/assets/images/img0.jpg', color: 'red' },
+    { image: '/assets/images/img01.jpg', color: 'red' },
+    // { image: '/assets/images/img2.jpg', color: 'blue' },
+    // { image: '/assets/images/img3.jpg', color: 'green' },
   ];
 
   ngOnInit(): void {}

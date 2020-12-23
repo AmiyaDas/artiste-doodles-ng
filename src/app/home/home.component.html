@@ -1,12 +1,20 @@
 <div class="marginTopDiv">
     <mat-carousel timings="250ms ease-in" [autoplay]="true" interval="5000" color="accent" maxWidth="auto"
-        proportion="100" slides="3" [loop]="true" [hideArrows]="true" [hideIndicators]="false" [useKeyboard]="true"
-        [useMouseWheel]="false" orientation="ltr">
+        proportion="100" slides="2" [loop]="true" [hideArrows]="true" [hideIndicators]="false" [useKeyboard]="true"
+        [useMouseWheel]="false" orientation="ltr" color="warn">
         <mat-carousel-slide #matCarouselSlide *ngFor="let slide of slides; let i = index" [image]="slide.image"
             [overlayColor]="slide.color" [hideOverlay]="true"></mat-carousel-slide>
     </mat-carousel>
 
-    <div>
-
+    <div class="categorySection">
+        <div class="earrings">
+            <div class="categoryTitle">Earrings</div>
+        </div>
+        <div class="necklace">
+            <div class="categoryTitle">Necklaces</div>
+        </div>
+        <div class="jwelSet">
+            <div class="categoryTitle">Jewellery Sets</div>
+        </div>
     </div>
 </div>

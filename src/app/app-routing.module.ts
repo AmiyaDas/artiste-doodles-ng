@@ -17,6 +17,10 @@ const routes: Routes = [
   { path: 'products/:categoryId', component: ProductsListComponent },
   { path: 'add', component: AddProductComponent },
   { path: 'edit/:productId', component: AddProductComponent },
+  {
+    path: '**',    
+    redirectTo: '',    
+  }
 ];
 
 @NgModule({

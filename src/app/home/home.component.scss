@@ -14,3 +14,53 @@
   width: 100%;
   height: 750px;
 }
+
+.categorySection > div {
+  width: 100%;
+  height: 15rem;
+  margin-top: 5px;
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.earrings {
+  background-image: linear-gradient(
+      1deg,
+      rgba(17, 125, 130, 0.5),
+      rgba(10, 10, 10, 0.2),
+      rgba(10, 10, 10, 0.01)
+    ),
+    url("/assets/images/bg1.jpg");
+}
+
+.necklace {
+  background-image: linear-gradient(
+      1deg,
+      rgba(31, 108, 112, 0.5),
+      rgba(10, 10, 10, 0.2),
+      rgba(10, 10, 10, 0.01)
+    ),
+    url("/assets/images/bg2.jpg");
+}
+
+.jwelSet {
+  background-image: linear-gradient(
+      1deg,
+      rgba(17, 125, 130, 0.5),
+      rgba(10, 10, 10, 0.2),
+      rgba(10, 10, 10, 0.01)
+    ),
+    url("/assets/images/bg3.jpg");
+}
+
+.categoryTitle {
+  font-size: 30px;
+  color: #b55;
+  font-weight: bold;
+  text-align: center;
+  padding-top: 50%;
+  font-family: "Arizonia-Regular";
+  text-shadow: 3px 3px 9px #000;
+}
